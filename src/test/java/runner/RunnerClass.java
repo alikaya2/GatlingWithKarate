@@ -1,7 +1,6 @@
 package runner;
 
 import com.intuit.karate.Results;
-import com.intuit.karate.Runner;
 import com.intuit.karate.junit5.Karate;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
@@ -10,7 +9,7 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class JunitRunner {
+public class RunnerClass {
 
     @BeforeEach
     public void beforeEach() {
@@ -36,7 +35,7 @@ public class JunitRunner {
 
     @Test
     void RunTag() {
-        Results results = Runner.path("classpath:src/test/java/magentoDummyFeatures").tags("~@Magento").parallel(1);
+        Results results = RunnerClass.path("classpath:src/test/java/magentoDummyFeatures").tags("~@Magento").parallel(1);
         assertEquals(0, results.getFailCount(), results.getErrorMessages());
     }
 
